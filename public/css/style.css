@@ -1,0 +1,189 @@
+a {
+  display: block;
+  color: #d1d1d1;
+  text-decoration: none;
+}
+
+.add-product {
+  position: relative;
+  left: 90%;
+  width: 10px;
+  bottom: 24px;
+}
+
+.agregar {
+  bottom: 10px;
+  position: relative;
+}
+
+#nav {
+      background-color: dimgray;
+      font-family: "Fira Sans", sans-serif;
+      position: fixed;
+      width: 100%;
+      z-index: 1;
+      top: 0px;
+}
+
+.nav-padding{
+  height: 46px;
+}
+
+.sub-menu>a {
+  padding: 15px;
+}
+
+.sub-menu {
+  left: 25px;
+  position: relative;
+}
+
+.sub-content {
+  position: relative;
+  left: 130px;
+}
+
+.nav-content {
+  position: absolute;
+  background-color: dimgray;
+  width: 110px;
+  text-align: center;
+  padding-left: 7px;
+  padding-bottom: 10px;
+  display: none;
+}
+.sub-nav-content>div {
+  position: absolute;
+  background-color: dimgray;
+  width: 140px;
+  display: none;
+}
+
+.sub-nav-content:hover>div {
+  display: block;
+  top: 8px;
+  left: 117px;
+}
+
+.sub-nav-content a:hover {
+  color: #ce9f57;
+}
+
+.sub-nav-content:hover {
+  background-color: rgb(85, 85, 85);
+}
+
+.sub-nav-content1 {
+  position: relative;
+}
+
+.sub-nav-content1>a {
+  margin-bottom: 4px;
+  padding: 2px;
+  padding-top: 4px;
+  font-size: 16px;
+}
+
+.sub-nav-content1>a:hover {
+  background-color: rgb(85, 85, 85);
+}
+.sub-nav-content2 {
+  position: relative;
+}
+
+.sub-nav-content2>a {
+  margin-bottom: 4px;
+  padding: 2px;
+  padding-top: 4px;
+  font-size: 16px;
+}
+
+.sub-nav-content2>a:hover {
+  background-color: rgb(85, 85, 85);
+}
+.sub-nav-content:hover> .sub-nav-content2 {
+  display: block;
+  top: 35px;
+  left: 117px;
+}
+#logo {
+  width: 100%;
+  height: 50px;
+  position: relative;
+  top: 4px;
+}
+
+.add-article {
+  width: 10px;
+}
+
+.text {
+  position: relative;
+}
+
+.agregar>img {
+  width: 50px;
+  right: 68px;
+  position: relative;
+  height: 48px;
+}
+
+#nav ul li>a:hover {
+  color: #d38955;
+}
+
+#nav:hover>.sub-nav-content {
+  display: block;
+  background-color: dimgray;
+  color: #7c7b7b;
+  bottom: 10px;
+}
+
+.sub-menu:hover .nav-content {
+  display: block;
+}
+
+.sub-nav-content {
+  margin-bottom: 3px;
+  padding: 7px;
+}
+
+.sub-nav {
+  padding: 2px;
+  background-color: #ee873e;
+}
+
+body>main {
+  background-color: #802626;
+  position: relative;
+}
+
+.aceptar {
+  position: absolute;
+  left: 43%;
+}
+.aceptar>a{
+  color: black;
+}
+p {
+  font-size: 20px;
+}
+
+text {
+  position: absolute;
+}
+
+/*# sourceMappingURL=style.css.map */
+
+.row {
+  display: flex;
+}
+
+.col {
+  flex: auto;
+}
+
+.nav-items {
+  display: flex;
+  justify-content: space-between;
+}

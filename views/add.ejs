@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en" style="background-color: rgb(240, 245, 243)">
+
+<head>
+  <%- include('./common/head-simple'); %>
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/add.css" />
+</head>
+
+<body>
+  <div>
+    <div class="nav-padding"></div>
+    <div class="container">
+      <div class="type-article">
+        <div class="form">
+          <form action="">
+            <p>Choose</p>
+            <select name="Animal" id="animal" class="animal">
+              <option value="for"selected disabled>For</option>
+              <option>Dog</option>
+              <option>Cat</option>
+            </select>
+            <p>Choose</p>
+            <select name="Animal" id="type" class="type">
+              <option disabled selected>Article of the animal</option>
+              <option>Eat</option>
+              <option>Accessories</option>
+              <option>Medicines</option>
+            </select>
+            <p>Choose</p>
+  
+            <select name="Animal" id="state" class="state">
+              <option selected disabled>State</option>
+              <option>New</option>
+              <option>Used</option>
+            </select>
+            <p>Departaments</p>
+  
+            <select name="departamentos" id="departamento" class="Departamento">
+              <option selected disabled>location</option>
+              <% departments.forEach(function(city){ %>
+                <option value="<%= city.id %>">
+                  <%= city.name %>
+                </option>
+                <% }); %>
+            </select>
+            <div id="cities"></div>
+          </form>
+          <button class="cancelar" id="cancelar">Cancel</button>
+          <button type="button" class="aceptar" id="aceptar">Next</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script>
+    const cancelar = document.getElementById("cancelar");
+    cancelar.addEventListener("click", () => {
+      document.location.href = "/";
+      alert("Estas seguro que quieres cancelar el formulario")
+    });
+
+    var departamentoElement = document.getElementById("departamento");
+    /**
+     * Se agrega el evento que detectata cundo se casmbian de departamento
+     */
+    departamentoElement.addEventListener(
+      "change",
+      ({ target: { value } }) => {
+        // Valor del deperatamento seleccionado
+        const departamento = value;
+
+        var citiesElement = document.getElementById("cities");
+        citiesElement.innerHTML = "Trayendo ciudades";
+
+        fetch("http://localhost:8000/cities/" + departamento, {
+          method: "GET",
+        })
+          .then((res) => res.json())
+          .then((cities) => {
+            let citiesHTML = "<p>Ciudades</p> <select id='ciudad'>";
+            cities.forEach(
+              (city) => (citiesHTML += "<option>" + city + "</option>")
+            );
+            citiesHTML += "</select>";
+            citiesElement.innerHTML = citiesHTML;
+          });
+      }
+    );
+    function obtener() {
+      const animal = document.getElementById("animal").value
+      const type = document.getElementById("type").value
+      const departamentos = document.getElementById("departamento").value
+      const ciudad = document.getElementById("ciudad").value
+      console.log({
+        animal,
+        type,
+        departamento,
+        ciudad
+      });
+    }
+    const aceptar = document.getElementById("aceptar")
+    console.log(aceptar);
+    aceptar.addEventListener("click", () => {
+      obtener()
+    })
+    aceptar.addEventListener("click", () => {
+      document.location.href=('/description')
+    })
+  </script>
+</body>
+
+</html>
